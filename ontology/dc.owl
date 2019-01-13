@@ -1,0 +1,700 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/octopus/ontologies/2018/dc"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/octopus/ontologies/2018/dc">
+    <Prefix name="" IRI="http://www.semanticweb.org/octopus/ontologies/2018/dc#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Abnormal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CarController"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Core"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Environment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Normal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Reverse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensors"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SuddenChange"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Timer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#highSpeed"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#lowSpeed"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#middleSpeed"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#onFace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#overSpeed"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#startingSpeed"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#toBreak"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#toCatchUP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#toFollow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#toSpeedDown"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#OPAbnormal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#OPNormal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#OPSpeedBreak"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#OPSpeedDown"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#OPSpeedKeep"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#OPSpeedUP"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#OPSuddenChange"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Acceleration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Angle"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Distance"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Velocity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#WeightValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#refTime"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BinocularCameraFront"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BinocularCameraLeft"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BinocularCameraRight"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Control"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#IMU"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lidar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MillimeterWaveRadar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Obstacle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ObstacleFront"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UltrasonicRadar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VehicleBebind"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VehicleFront"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VehicleLeft"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VehicleRight"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#XDistance"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Abnormal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#OPAbnormal"/>
+            <Class IRI="#Core"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Normal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#OPNormal"/>
+            <Class IRI="#Core"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Reverse"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Velocity"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxExclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">0.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Stop"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Velocity"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">0.0</Literal>
+                </FacetRestriction>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">0.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SuddenChange"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#OPSuddenChange"/>
+            <Class IRI="#Core"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#highSpeed"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Velocity"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">40.0</Literal>
+                </FacetRestriction>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">60.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#lowSpeed"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Velocity"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">10.0</Literal>
+                </FacetRestriction>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">25.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#middleSpeed"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Velocity"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">25.0</Literal>
+                </FacetRestriction>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">40.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#onFace"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Distance"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">1.5</Literal>
+                </FacetRestriction>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">0.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#overSpeed"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Velocity"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">60.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#startingSpeed"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Velocity"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">0.0</Literal>
+                </FacetRestriction>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">10.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#toBreak"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Distance"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">1.5</Literal>
+                </FacetRestriction>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">7.7</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#toCatchUP"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Distance"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">12.7</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#toFollow"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Distance"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">10.2</Literal>
+                </FacetRestriction>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">12.7</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#toSpeedDown"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Distance"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">7.7</Literal>
+                </FacetRestriction>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">10.2</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Abnormal"/>
+        <Class IRI="#Sensors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Normal"/>
+        <Class IRI="#Sensors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Reverse"/>
+        <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stop"/>
+        <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SuddenChange"/>
+        <Class IRI="#Sensors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#highSpeed"/>
+        <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#lowSpeed"/>
+        <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#middleSpeed"/>
+        <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#onFace"/>
+        <Class IRI="#Environment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#overSpeed"/>
+        <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#startingSpeed"/>
+        <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#toBreak"/>
+        <Class IRI="#Environment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#toCatchUP"/>
+        <Class IRI="#Environment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#toFollow"/>
+        <Class IRI="#Environment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#toSpeedDown"/>
+        <Class IRI="#Environment"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Sensors"/>
+        <NamedIndividual IRI="#BinocularCameraFront"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sensors"/>
+        <NamedIndividual IRI="#BinocularCameraLeft"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sensors"/>
+        <NamedIndividual IRI="#BinocularCameraRight"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CarController"/>
+        <NamedIndividual IRI="#Control"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sensors"/>
+        <NamedIndividual IRI="#IMU"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sensors"/>
+        <NamedIndividual IRI="#Lidar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sensors"/>
+        <NamedIndividual IRI="#MillimeterWaveRadar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Environment"/>
+        <NamedIndividual IRI="#Obstacle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Environment"/>
+        <NamedIndividual IRI="#ObstacleFront"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sensors"/>
+        <NamedIndividual IRI="#UltrasonicRadar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Environment"/>
+        <NamedIndividual IRI="#VehicleBebind"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Environment"/>
+        <NamedIndividual IRI="#VehicleFront"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Environment"/>
+        <NamedIndividual IRI="#VehicleLeft"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Environment"/>
+        <NamedIndividual IRI="#VehicleRight"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Distance"/>
+        <NamedIndividual IRI="#BinocularCameraFront"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">0.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Distance"/>
+        <NamedIndividual IRI="#BinocularCameraRight"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">10.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Distance"/>
+        <NamedIndividual IRI="#Lidar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">10.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Distance"/>
+        <NamedIndividual IRI="#MillimeterWaveRadar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">10.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#refTime"/>
+        <NamedIndividual IRI="#TimerBCF"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.77070249250257E14</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#refTime"/>
+        <NamedIndividual IRI="#TimerBCR"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.77070268334549E14</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#refTime"/>
+        <NamedIndividual IRI="#TimerLidar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.77071275551363E14</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#refTime"/>
+        <NamedIndividual IRI="#TimerMWR"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.77071326914193E14</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#refTime"/>
+        <NamedIndividual IRI="#TimerUR"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.7707129432263E14</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Distance"/>
+        <NamedIndividual IRI="#UltrasonicRadar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">10.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Velocity"/>
+        <NamedIndividual IRI="#VCI"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">44.307131634</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Distance"/>
+        <NamedIndividual IRI="#XDistance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">0.0</Literal>
+    </DataPropertyAssertion>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">S1</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Stop"/>
+                <Variable IRI="#p"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#OPSpeedUP"/>
+                <NamedIndividual IRI="#Control"/>
+                <NamedIndividual IRI="#Control"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">S5</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#highSpeed"/>
+                <Variable IRI="#p"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#OPSpeedKeep"/>
+                <NamedIndividual IRI="#Control"/>
+                <NamedIndividual IRI="#Control"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">S3</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#lowSpeed"/>
+                <Variable IRI="#p"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#OPSpeedUP"/>
+                <NamedIndividual IRI="#Control"/>
+                <NamedIndividual IRI="#Control"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">S4</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#middleSpeed"/>
+                <Variable IRI="#p"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#OPSpeedUP"/>
+                <NamedIndividual IRI="#Control"/>
+                <NamedIndividual IRI="#Control"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">S6</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#overSpeed"/>
+                <Variable IRI="#p"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#OPSpeedDown"/>
+                <NamedIndividual IRI="#Control"/>
+                <NamedIndividual IRI="#Control"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">S2</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#startingSpeed"/>
+                <Variable IRI="#p"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#OPSpeedUP"/>
+                <NamedIndividual IRI="#Control"/>
+                <NamedIndividual IRI="#Control"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

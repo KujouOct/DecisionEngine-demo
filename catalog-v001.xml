@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1547372741469" name="http://www.semanticweb.org/octopus/ontologies/2018/dc" uri="dc.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1547372741469" name="http://www.w3.org/2002/07/owl" uri="ontology/temp.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1547372741469" name="shadowed:http://www.semanticweb.org/octopus/ontologies/2018/dc" uri="backup/dc.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1547372741469" name="shadowed:http://www.semanticweb.org/octopus/ontologies/2018/dc" uri="ontology/dc.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1547372741469" name="shadowed:http://www.semanticweb.org/octopus/ontologies/2018/dc" uri="ontology/example.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1547372741469" name="shadowed:http://www.semanticweb.org/octopus/ontologies/2018/dc" uri="ontology/onto.owl"/>
+    </group>
+</catalog>
